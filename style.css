@@ -46,6 +46,12 @@ body {
   color: #848EAD;
 }
 
+
+#input-wrapper {
+  position: relative;
+  margin-top: 41px;
+}
+
 .white-box {
   display: flex;
   justify-content: center;
@@ -75,7 +81,6 @@ body {
 }
 
 #select {
-  margin-top: 41px;
   -webkit-appearance: none;
   width: 100%;
   height: 2px;
@@ -86,6 +91,8 @@ body {
 }
 
 #select::-webkit-slider-thumb {
+  position: relative;
+  z-index: 1;
   appearance: none;
   width: 40px;
   height: 40px;
@@ -125,7 +132,8 @@ body {
   margin-top: 24px;
 }
 
-#price {
+#price,
+#price-mob {
   width: 105px;
   height: 44px;
   font-family: Manrope;
@@ -136,7 +144,7 @@ body {
   color: #293356;
 }
 
-.desktop-month {
+#desktop-month {
   display: none;
   width: 53px;
   height: 19px;
@@ -147,7 +155,7 @@ body {
   color: #848EAD;
 }
 
-.mob-month {
+#mob-month {
   width: 53px;
   height: 19px;
   font-family: Manrope;
@@ -184,11 +192,43 @@ body {
 }
 
 #switcher::-webkit-slider-thumb {
+  position: relative;
+  z-index: 2;
   appearance: none;
   border-radius: 50%;
   width: 14px;
   height: 14px;
+  /* background-color: #FFFFFF; */
+}
+
+#progress {
+  z-index: 1;
+  top: 5px;
+  left: 0;
+  width: 50%;
+  height: 8px;
+  border-radius: 5px;
+  /* background-color: #A4F3EB; */
+  background-color: #24AEA1;
+  position: absolute;
+}
+
+.blue-slide {
+  display: flex;
+  align-items: center;
+  width: 43px;
+  height: 22px;
+  border-radius: 15px;
+  background-color: #CFD8EF;
+  padding: 5px;
+  border: none;
+}
+
+#white-circle {
+  width: 14px;
+  height: 14px;
   background-color: #FFFFFF;
+  border-radius: 50%;
 }
 
 
@@ -230,7 +270,7 @@ footer span {
   margin-bottom: 11px;
 }
 
-button {
+.start {
   margin-top: 33px;
   width: 170px;
   height: 41px;
@@ -267,8 +307,12 @@ button {
     min-height: 397px;
   }
 
-  .desktop-month {
+  #desktop-month {
     display: block;
+  }
+
+  #mob-month {
+    display: none;
   }
 
   .price-mobile {
@@ -294,8 +338,8 @@ button {
     letter-spacing: 2px;
   }
 
-  .price {
-    width: 131px;
+  #price {
+    width: 160px;
     height: 55px;
     font-size: 40px;
     line-height: 54.64px;
@@ -318,11 +362,11 @@ button {
     justify-content: space-between;
   }
 
-  button {
+  .start {
     margin-top: 0px;
   }
 
-  button:hover {
+  .start {
     color: #FFFFFF;
     cursor: pointer;
   }
